@@ -1,33 +1,49 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Webfonts */
+@import "_fonts.css";
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Tailwind base/components */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+
+/* Custom Style Imports */
+@import "_typography.css";
+
+/* Tailwind Utilities */
+@import "tailwindcss/utilities";
+
+/* Simple defaults */
+
+body {
+  @apply font-sohneHalbfett antialiased bg-lightBlue;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  .btn-blue {
+    @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .filter-none {
+    filter: none;
+  }
+  .filter-grayscale {
+    filter: grayscale(100%);
+  }
+
+  .hero-font-size {
+    @media (max-width: 425px) {
+      font-size: 15px;
+    }
   }
 }
