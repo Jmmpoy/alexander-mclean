@@ -19,7 +19,7 @@ export default function Header() {
           <a className="flex items-center font-sohneKraftig text-base">A.C.M</a>
 
           {/* NAVBAR */}
-          <nav className="md:ml-auto flex flex-wrap items-center justify-center font-sohneBuch text-sm ">
+          <nav className="md:ml-auto flex flex-wrap items-center justify-center font-sohneBuch font-medium text-sm ">
             <a className="mr-5">À Propos</a>
             <a className="mr-5">Portfolio</a>
             <a className="">Contact</a>

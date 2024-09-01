@@ -1,13 +1,13 @@
-import About from "@/components/About/about";
-import Contact from "@/components/contact";
-import Hero from "@/components/Hero/index";
-import Intro from "@/components/Intro/Intro";
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Hero from "@/components/Hero";
 import Portfolio from "@/components/Portfolio/portfolio";
-import Services from "@/components/Services/services";
+import ScrollToTop from "@/components/scrollToTop";
+import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className="overflow-y-hiddenhidden">
+    <div className="relative">
       <Hero />
       <About />
       <Services />

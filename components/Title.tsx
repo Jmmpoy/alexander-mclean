@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
+import {
+  inView,
+  motion,
+  useAnimate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 interface TitleProps {
   title: string;
   lineSize: string;
-  isWhite?: boolean
+  isWhite?: boolean;
 }
-
 interface TitleUnderlineProps {
   lineSize: string;
 }
@@ -39,15 +45,32 @@ const TitleUnderline = ({ lineSize }: TitleUnderlineProps) => {
 };
 
 const Title = ({ title, lineSize, isWhite }: TitleProps) => {
+  const [scope, animate] = useAnimate();
+
+  useEffect(() => {
+    inView(scope.current, () => {
+      animate(
+        scope.current,
+        { opacity: [0, 1] },
+        { duration: 1, ease: "easeInOut" }
+      );
+    });
+  }, []);
   return (
-    <div className="flex space-x-2">
-      <span className={`text-3xl ${isWhite ? "text-white" : "text-blue"}`}>● </span>
+    <motion.div ref={scope} className="title-container flex space-x-2">
+      <span className={`text-xl ${isWhite ? "text-white" : "text-blue"}`}>
+        ●{" "}
+      </span>
       <div className="inline-block">
         {" "}
-        <h1 className={`uppercase text-3xl ${isWhite ? "text-white" : "text-blue"}  `}>{title}</h1>
+        <h1
+          className={`uppercase text-xl ${isWhite ? "text-white" : "text-blue"}  `}
+        >
+          {title}
+        </h1>
         <TitleUnderline lineSize={lineSize} />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

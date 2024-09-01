@@ -18,11 +18,13 @@ const HeroLines: React.FC<HeroLinesProps> = ({ introIsFinished }) => {
     }
   }, [animate, introIsFinished]);
 
-  const textLines = [
-    "Plongez dans l'univers visuel d'Alexander.",
-    "Chaque photo révèle une nouvelle perspective.",
-    "Voyagez à travers l'objectif.",
-  ];
+  // const textLines = [
+  //   "Plongez dans l'univers visuel d'Alexander.",
+  //   "Chaque photo révèle une nouvelle perspective.",
+  //   "Voyagez à travers l'objectif.",
+  // ];
+
+  const textLines = ["Alexander", "Champy McLean."];
 
   return (
     <div className=" hero-container w-12/12 relative">
@@ -32,7 +34,7 @@ const HeroLines: React.FC<HeroLinesProps> = ({ introIsFinished }) => {
             <div className="overflow-hidden" key={i}>
               <motion.li
                 initial={{ opacity: 0, y: 100 }}
-                className={`font-founders font-medium hero-font-size tracking-tight mx-auto text-opacity-100 text-white mb-0 w-12/12 md:leading-normal xsm:text-base sm:text-xl md:text-2xl lg:text-3xl`}
+                className={`font-sohneKraftig font-bold tracking-tight mx-auto text-opacity-100 text-white mb-0 uppercase w-12/12  text-4xl sm:text-5xl md:text-7xl lg:text-8xl`}
               >
                 {line}
               </motion.li>

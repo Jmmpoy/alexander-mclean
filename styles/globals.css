@@ -13,8 +13,12 @@
 
 /* Simple defaults */
 
+html, body, body > div{
+    height: 100%;
+}
+
 body {
-  @apply font-sohneHalbfett antialiased bg-lightBlue;
+  @apply font-sohneHalbfett antialiased bg-lightBlue relative;
 }
 
 
@@ -22,6 +26,7 @@ body {
   h1 {
     @apply text-2xl;
   }
+
   h2 {
     @apply text-xl;
   }
@@ -34,9 +39,36 @@ body {
 }
 
 @layer utilities {
+
+.link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%
+  }
+
+  .stroke {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: currentColor;
+  }
+
+
   .filter-none {
     filter: none;
   }
+
   .filter-grayscale {
     filter: grayscale(100%);
   }

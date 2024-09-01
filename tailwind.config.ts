@@ -15,11 +15,12 @@ module.exports = {
       foundersLight: ["FoundersLight"],
       founders: ["Founders"],
       //light
-      sohneBuch:["Sohne-Buch"],
-      sohneFett:["Sohne-Fett"],
-      sohneKraftig:["Sohne-Kraftig"],
+      sohneBuch: ["Sohne-Buch"],
+      sohneFett: ["Sohne-Fett"],
       //bold
-      sohneHalbfett:["Sohne-Halbfett"]
+      sohneKraftig: ["Sohne-Kraftig"],
+
+      sohneHalbfett: ["Sohne-Halbfett"],
     },
     screens: {
       xsm: "400px",
@@ -34,10 +35,10 @@ module.exports = {
       colors: {
         black: "#000",
         white: "#fcfbfa",
-        beige:"#f2eeea",
+        beige: "#f2eeea",
         gray: "#888888",
         blue: "#2159A7",
-        lightBlue:"#F6F7FB"
+        lightBlue: "#F6F7FB",
       },
     },
   },

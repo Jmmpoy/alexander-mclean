@@ -10,12 +10,17 @@
   },
   "dependencies": {
     "@next/eslint-plugin-next": "^14.2.3",
+    "@nextui-org/accordion": "^2.0.38",
+    "@studio-freight/react-lenis": "^0.0.47",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.2.10",
-    "lenis": "^1.1.1",
+    "lenis": "^1.1.9",
     "next": "14.2.3",
     "prettier-plugin-tailwindcss": "^0.6.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-feather": "^2.0.10",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "^20",
