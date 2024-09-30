@@ -27,7 +27,7 @@ const Intro: React.FC<IntroProps> = ({ setIntroIsfinished }) => {
       .then(() => {
         setIntroIsfinished(true);
       });
-  }, [animate, scope]);
+  }, []);
 
   return (
     <motion.div

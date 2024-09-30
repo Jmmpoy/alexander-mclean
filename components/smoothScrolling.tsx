@@ -3,7 +3,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 
 function SmoothScrolling({ children }: any) {
   return (
-    <ReactLenis root options={{ lerp: 0.05, smoothWheel: true }}>
+    <ReactLenis root options={{ lerp: 0.02, smoothWheel: true }}>
       {children}
     </ReactLenis>
   );

@@ -54,8 +54,8 @@ export default function About() {
   };
   const Section = () => {
     return (
-      <div className="Section lg:space-y-0 col-span-12 flex gap-x-20 flex-col lg:flex-row ">
-        <div className=" w-full md:w-2/3 lg:w-1/3 flex flex-col  items-start font-sohneKraftig text-blue ">
+      <div className="lg:space-y-0 col-span-12 flex gap-x-20 flex-col lg:flex-row ">
+        <div className=" w-full md:w-2/3  flex flex-col  items-start font-sohneKraftig text-blue ">
           <Title title="À propos" lineSize="120" />
           <p className="text-base mt-16 w-full"> {text1}</p>
         </div>
@@ -65,7 +65,10 @@ export default function About() {
   };
 
   return (
-    <Container extraClasses="lg:pt-[5rem] pb-[6rem] about-section">
+    <Container
+      id="About-Section"
+      extraClasses="lg:pt-[5rem] pb-[6rem] about-section"
+    >
       <div className="relative" ref={scope}>
         <section className=" mt-24 lg:grid lg:grid-cols-12 relative">
           <Section />

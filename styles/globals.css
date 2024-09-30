@@ -17,8 +17,14 @@ html, body, body > div{
     height: 100%;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   @apply font-sohneHalbfett antialiased bg-lightBlue relative;
+  
+
 }
 
 

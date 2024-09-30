@@ -35,7 +35,7 @@ export default function ScrollToTop() {
           {" "}
           <motion.button
             onClick={goToTop}
-            className="scrollToTop-btn rounded-full bg-blue w-full h-full p-2"
+            className="scrollToTop-btn rounded-full bg-white w-full h-full p-2"
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1, transition: { duration: 0.6 } }}
             exit={{ y: 100, opacity: 0, transition: { duration: 0.6 } }}
@@ -47,7 +47,7 @@ export default function ScrollToTop() {
           >
             <Arrow
               size="w-12 w-12"
-              style="rotate-[270deg] text-white h-full w-full flex justify-center"
+              style="rotate-[270deg] text-white h-full w-full flex justify-center text-blue"
             />
           </motion.button>
         </div>

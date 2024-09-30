@@ -1,5 +1,4 @@
 import React from "react";
-import { Instagram, Linkedin } from "react-feather";
 
 export default function Footer() {
   return (

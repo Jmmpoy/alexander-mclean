@@ -5,10 +5,8 @@ import type { AppProps } from "next/app";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SmoothScrolling>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </SmoothScrolling>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   );
 }

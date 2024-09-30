@@ -8,14 +8,14 @@ export default function Arrow({ style, size }: any) {
       initial="initial"
       animate="enter"
       exit="exit"
-      className={style}
+      className="text-blue"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth="1.5"
-        stroke="currentColor"
+        stroke="#"
       >
         <path
           strokeLinecap="round"

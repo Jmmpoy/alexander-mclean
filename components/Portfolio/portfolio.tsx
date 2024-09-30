@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import WavyIcon from "./wavyIcon";
 import Container from "../container";
 import { ParallaxScroll } from "./parallaxSroll";
+import { useRouter } from "next/router";
 
 const Portfolio = () => {
   const images = [
@@ -21,6 +22,8 @@ const Portfolio = () => {
   ];
 
   const gridRef = useRef<any>(null);
+  const router = useRouter(); // Initialize router
+
   const { scrollYProgress } = useScroll({
     container: gridRef,
     offset: ["start end", "end start"],
@@ -29,13 +32,20 @@ const Portfolio = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, -10]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
 
+  // Handle image click and navigate to the project page
+  const handleImageClick = (projectId: number) => {
+    router.push(`/project/${projectId}`);
+  };
+
   return (
-    <Container>
+    <Container id="Portfolio-Section">
       <Title title="PORTFOLIO" lineSize="120" />
-      <ParallaxScroll images={images} className="mt-24" />
-      {/* <div className="mt-44 grid grid-col-1 gap-20 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3">
+      {/* <ParallaxScroll images={images} className="mt-24" /> */}
+      <div
+        className="my-20 grid grid-col-1 gap-20 sm:grid-cols-2 sm:gap-12 md:grid-cols-3 lg:grid-cols-4
+      "
+      >
         {images.map((image, index) => {
-          // Ref to track if this particular image container is in view
           const ref = useRef(null);
           const isInView = useInView(ref, { once: true });
 
@@ -43,8 +53,12 @@ const Portfolio = () => {
             <motion.div
               key={index}
               ref={ref}
-              style={{ y: isInView ? ((index - 1) % 3 === 0 ? y : y2) : y }}
-              className="overflow-hidden min-h-[300px]"
+              className="overflow-hidden min-h-[200px] cursor-pointer"
+              onClick={() => handleImageClick(index)}
+              // Motion props for opacity animation
+              initial={{ opacity: 0 }} // Start with opacity 0
+              animate={{ opacity: isInView ? 1 : 0 }} // Animate to opacity 1 when in view
+              transition={{ duration: 0.8, ease: "easeInOut" }} // Animation settings
             >
               <img
                 src={image}
@@ -53,8 +67,8 @@ const Portfolio = () => {
             </motion.div>
           );
         })}
-      </div> */}
-      <div className="text-center  relative flex flex-col">
+      </div>
+      <div className="text-center  relative flex flex-col ">
         <button className="text-base font-sohneKraftig uppercase text-blue">
           Voir plus
         </button>
